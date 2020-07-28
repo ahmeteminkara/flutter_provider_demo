@@ -22,12 +22,9 @@ class NewsDetailView extends StatelessWidget {
               pinned: true,
               snap: true,
               flexibleSpace: FlexibleSpaceBar(
-                  collapseMode: CollapseMode.pin,
                   title: Text(newsItem.author,
                       style: TextStyle(
-                        shadows: [
-                          Shadow(blurRadius: 30, offset: Offset(0, 0)),
-                        ],
+                        shadows: [Shadow(blurRadius: 30, offset: Offset(0, 0))],
                       )),
                   background: _image),
             ),
