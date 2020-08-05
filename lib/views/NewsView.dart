@@ -19,12 +19,14 @@ class NewsView extends StatelessWidget {
         ],
       ),
       body: body(news),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.refresh),
-        onPressed: () {
-          news.fetchTopHeadLines();
-        },
-      ),
+      floatingActionButton: news.requestStatus == EnumNewsRequestStatus.LOADING
+          ? null
+          : FloatingActionButton(
+              child: Icon(Icons.refresh),
+              onPressed: () {
+                news.fetchTopHeadLines();
+              },
+            ),
     );
   }
 
